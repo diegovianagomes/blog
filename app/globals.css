@@ -1,26 +1,77 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --sh-class: #2563eb; /* blue-600 */
+  --sh-identifier: #8b5cf6; /* violet-600 */
+  --sh-sign: #a1a1aa; /* slate-400 */
+  --sh-property: #0d9488; /* teal-600 */
+  --sh-entity: #059669; /* emerald-600 */
+  --sh-jsxliterals: #c026d3; /* fuchsia-600 */
+  --sh-string: #0891b2; /* cyan-600 */
+  --sh-keyword: #ef4444; /* red-500 */
+  --sh-comment: #64748b; /* slate-500 */
+  --color-pigment-indigo-50: #faf4ff;
+  --color-pigment-indigo-100: #f3e6ff;
+  --color-pigment-indigo-200: #ead2ff;
+  --color-pigment-indigo-300: #d9aeff;
+  --color-pigment-indigo-400: #c27bff;
+  --color-pigment-indigo-500: #ab49ff;
+  --color-pigment-indigo-600: #9825f8;
+  --color-pigment-indigo-700: #8315db;
+  --color-pigment-indigo-800: #6f17b2;
+  --color-pigment-indigo-900: #5b148f;
+  --color-pigment-indigo-950: #4b0082;
+
+
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  article {
+    @apply flex flex-col gap-y-4;
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  p,
+  ul,
+  ol {
+    @apply text-zinc-700 dark:text-zinc-300/80;
+  }
+
+  article h2 {
+    @apply pt-8 text-3xl;
+  }
+
+  article h3 {
+    @apply pt-4 text-lg;
+  }
+
+  article ul,
+  article ol {
+    @apply pl-8;
+  }
+
+  article ul {
+    @apply list-disc;
+  }
+
+  article ol {
+    @apply list-decimal;
+  }
+
+  article blockquote {
+    @apply border-l-2 border-sky-500 pl-3 text-red-500 dark:border-sky-600 dark:text-zinc-300;
+  }
+
+  article :not(pre) > code {
+    @apply mx-1 select-all text-nowrap rounded px-1.5 py-0.5 text-sm text-zinc-950 ring-1 ring-zinc-300 dark:text-zinc-300 dark:ring-zinc-600;
+  }
+
+  article pre {
+    @apply overflow-x-auto p-4 text-sm ring-1 ring-zinc-300 dark:ring-zinc-500;
+  }
+
+  article a {
+    @apply text-zinc-950 underline decoration-sky-500 underline-offset-4 dark:text-zinc-300 dark:decoration-sky-600;
+  }
 }
