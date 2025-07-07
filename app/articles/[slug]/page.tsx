@@ -19,15 +19,15 @@ export default async function ArticlePage({
   const articleData = await getArticlesData(params.slug);
   return (
     <>
-      <div>
-          <span>
+      <div className="flex flex-col items-center justify-center p-8">
+          <span className="text-sm text-zinc-500 dark:text-zinc-400">
             {articleData.date}
           </span>
-          <div>
-            <h1>
+          <div className="flex w-full max-w-prose flex-col items-center justify-center gap-4 px-4 pb-6 pt-1">
+            <h1 className="text-center max-sm:text-3xl text-5xl">
               {articleData.title}
             </h1>
-            <div>
+            <div className="flex flex-wrap gap-x-3">
               {articleData.tags.map((tag: string) => (
                 <Tag key={tag} tag={tag} />
               ))}
