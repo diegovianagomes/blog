@@ -27,7 +27,7 @@ const externalLinks: Link[] = [
 
   {
     name: "Orcid",
-    url: "https://orcid.org/0000-0002-8701",
+    url: "https://orcid.org/0009-0007-7290-0349",
     icon: <SiOrcid className="fill-[#5b148f]  dark:fill-zinc-300" />,
   },
 

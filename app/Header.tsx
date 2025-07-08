@@ -47,7 +47,7 @@ export default function Header() {
           <div className="flex flex-col max-sm:items-center text-[#5b148f] dark:text-[#ead2ff]">
               Diego Viana
               {/*<span className="text-[#ab49ff] dark:text-[#9825f8]">
-                Software Engineer
+                AI/ML Engineer
               </span>*/}
           </div>
         ):(
@@ -60,9 +60,9 @@ export default function Header() {
           </div>
           <div className="flex flex-col max-sm:items-center">
               Diego Viana
-              <span className="text-zinc-500 dark:text-zink-400">
-                Software Engineer
-              </span>
+              {/*<span className="text-[#ab49ff] dark:text-[#9825f8]">
+                AI/ML Engineer
+              </span>*/}
           </div>
         </Link>
         )}
