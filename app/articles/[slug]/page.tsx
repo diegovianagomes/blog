@@ -1,5 +1,5 @@
-import { Article } from "@/src/components/article";
-import { getArticlesData } from "@/src/lib/articles";
+import { Article } from "@/components/article";
+import { getArticlesData } from "@/lib/articles";
 
 function Tag({ tag }: { tag: string }) {
   return (
