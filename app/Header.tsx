@@ -1,16 +1,19 @@
 "use client";
 
-import { ChevronLeft, Moon, Sun } from "lucide-react";
+import { ChevronLeft } from "lucide-react";
+//import { Moon, Sun } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+//import { useEffect, useState } from "react";
 
 
 export default function Header() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  {/* Implementation of the dark/light mode toggle in the next updates
+    const [isDarkMode, setIsDarkMode] = useState(false);*/}
   const path = usePathname();
   const isHome = path === "/";
-  useEffect(() => {
+  {/* Implementation of the dark/light mode toggle in the next updates
+    useEffect(() => {
     const themeIsDark =
       localStorage.theme === "dark" ||
       (!("theme" in localStorage) &&
@@ -35,17 +38,17 @@ export default function Header() {
       document.documentElement.classList.remove("dark");
     }
     setIsDarkMode(newIsDarkMode);
-  };
+  };*/}
 
   return (
     <header className="mx-auto max-w-prose py-8 max-sm:pt-4">
       <nav className="flex items-center justify-between max-sm:flex-col max-sm:gap-6">
         {isHome ? (
-          <div className="flex flex-col max-sm:items-center">
+          <div className="flex flex-col max-sm:items-center text-[#5b148f] dark:text-[#ead2ff]">
               Diego Viana
-              <span className="text-zinc-500 dark:text-zink-400">
+              {/*<span className="text-[#ab49ff] dark:text-[#9825f8]">
                 Software Engineer
-              </span>
+              </span>*/}
           </div>
         ):(
           <Link
@@ -65,6 +68,7 @@ export default function Header() {
         )}
 
         <div className="flex items-center gap-4">
+          {/* Implementation of the dark/light mode toggle in the next updates
           <button
             onClick={toggleTheme}
             className="group relative flex items-center"
@@ -74,27 +78,27 @@ export default function Header() {
             ) : (
               <Moon className="size-5 fill-[#4b0082] transition-all sm:hover:-rotate-12 sm:hover:scale-110" />
             )}
-          </button>
+          </button>*/}
           <Link
             className="group relative rounded px-2 py-px  transition-all"
             href="/projects"
             data-is-current-path={path === "/projects"}
           >
-            /projects
+            projects
           </Link>
           <Link
             className="group relative rounded px-2 py-px  transition-all"
             href="/articles"
             data-is-current-path={path === "/articles"}
           >
-            /articles
+            articles
           </Link>
           <Link
             className="group relative rounded px-2 py-px  transition-all"
             href="/about"
             data-is-current-path={path === "/about"}
           >
-            /about
+            about
           </Link>
         </div>
       </nav>

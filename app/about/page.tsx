@@ -2,8 +2,7 @@ export default function AboutPage() {
   return (
     <div>
       <h1 className="mb-16 mt-4 text-center text-5xl max-sm:text-4xl">About me</h1>
-      
-      <article>
+            <article>
         <p>
         If I could sum up my career, I would say that it is a bridge. A bridge between the solidity of architecture and the fluidity of technology.
         </p>

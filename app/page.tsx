@@ -1,12 +1,11 @@
 
-import { SiLinkedin, SiGithub, SiYoutube } from "react-icons/si";
+import { SiLinkedin, SiGithub, SiYoutube, SiOrcid } from "react-icons/si";
 import { FaXTwitter } from "react-icons/fa6";
-
 import { ReactNode } from "react";
 import Link from "next/link";
-import { ArrowUpRight, Copy, Download, Send } from "lucide-react";
-
-
+import { ArrowUpRight} from "lucide-react";
+import Image from "next/image";
+import { LattesIcon } from "@/components/icons/LattesIcon";
 interface Link {
   name: string;
   description?: string;
@@ -18,23 +17,37 @@ const externalLinks: Link[] = [
   {
     name: "LinkedIn",
     url: "https://linkedin.com/in/diegovianagomes",
-    icon: <SiLinkedin className="fill-[#0077B5] dark:fill-zinc-300" />,
+    icon: <SiLinkedin className="fill-[#5b148f] dark:fill-zinc-300" />,
   },
   {
     name: "GitHub",
     url: "https://github.com/diegovianagomes",
-    icon: <SiGithub />,
+    icon: <SiGithub className="fill-[#5b148f] dark:fill-zinc-300" />,
   },
+
+  {
+    name: "Orcid",
+    url: "https://orcid.org/0000-0002-8701",
+    icon: <SiOrcid className="fill-[#5b148f]  dark:fill-zinc-300" />,
+  },
+
+  {
+    name: "Lattes",
+    url: "https://orcid.org/0000-0002-8701",
+    icon: <LattesIcon className="h-4 w-4 fill-[#5b148f]  dark:fill-zinc-300"/>  },
+
   {
     name: "YouTube",
     url: "https://youtube.com/@diegovianagomes",
-    icon: <SiYoutube className="fill-[#FF0032] dark:fill-zinc-300" />,
+    icon: <SiYoutube className="fill-[#5b148f] dark:fill-zinc-300" />,
   },
+
   {
     name: "X",
     url: "https://x.com/drlegobox",
-    icon: <FaXTwitter className="fill-[#FF0032] dark:fill-zinc-300" />,
+    icon: <FaXTwitter className="fill-[#5b148f] dark:fill-zinc-300" />,
   },
+
 ];
 
 const ExternalLink = (link: Link) => {
@@ -51,7 +64,7 @@ const ExternalLink = (link: Link) => {
           {link.description}
         </span>
       </span>
-      <ArrowUpRight className="size-5 shrink-0 text-zinc-800 transition-all sm:group-hover:rotate-45 dark:text-zinc-300" />
+      <ArrowUpRight className="size-5 shrink-0 text-[#5b148f] transition-all sm:group-hover:rotate-45 dark:text-zinc-300" />
     </a>
   );
 };
@@ -59,52 +72,26 @@ const ExternalLink = (link: Link) => {
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-6">
-      <div className="flex flex-col items-center">
-        <p className="text-sm">
-          Hi, I´m Diego Viana, a software engineer based in Brazil. I have a passion for building web applications and exploring new technologies. This is my personal blog where I share my thoughts, experiences, and projects.
+    <div className="flex flex-col gap-6 p-4">
+      <div className="flex items-center gap-6 rounded-lg  p-6">
+        <Image
+          src="/images/avatar.png"
+          alt="Diego Viana"
+          width={80}
+          height={80}
+          className="shrink-0 rounded-full ring-2 ring-[#c27bff] dark:ring-[#ead2ff]"
+        />
+        <p className="text-sm text-[#5b148f] dark:text-[#ead2ff]">
+          Hi, I´m Diego Viana, a software engineer based in Brazil. I have a
+          passion for building web applications and exploring new technologies. This is
+          my personal blog where I share my thoughts, experiences, and projects.
         </p>
       </div>
-      <div className="divide-y divide-zinc-400 overflow-hidden rounded ring-2 ring-zinc-400 dark:divide-zinc-500 dark:ring-zinc-500">
+      <div className="grid grid-cols-2  divide-y divide-x divide-[#5b148f] overflow-hidden rounded ring-2 ring-[#5b148f] dark:divide-[#ead2ff] dark:ring-[#ead2ff]">
         {externalLinks.map((link: Link) => (<ExternalLink key={link.url} {...link} /> ))}
       </div>
 
-      <div className="flex justify-center gap-y-6 max-sm:flex-col-reverse sm:justify-between">
-        <div className="flex flex-col justify-center gap-y-5 max-sm:items-center">
-          <div className="sm:group relative -m-8 flex items-center gap-3 p-8 transition-all">
-            diegovianagomes@gmail.com
-            <div className="inline-flex items-center gap-3 transition-all sm:absolute sm:right-4 sm:opacity-0 sm:group-hover:right-1 sm:group-hover:opacity-100">
-                <button className="text-zinc-800 sm:group-hover:inline-flex dark:text-zinc-300">
-                  <Copy className="size-4" />
-                  Teste
-                </button>
-              <a
-                href="mailto:diegovianagomes@gmail.com"
-                className="text-zinc-800 dark:text-zinc-300"
-              >
-                <Send className="size-4" />
-              </a>
-            </div>
-          </div>
-          <span
-            className="-mt-2 flex w-fit items-center gap-1.5 rounded-full bg-green-100 px-2 py-0.5 text-sm text-green-600 ring-1 ring-green-500 dark:bg-transparent dark:text-emerald-500 dark:ring-emerald-500">
-            <div className="size-2 animate-pulse rounded-full bg-green-500 dark:bg-emerald-500" />
-            Online
-          </span>
-        </div>
-
-        <div className="flex flex-col gap-2">
-          <a
-            href="/diego-viana-cv.pdf"
-            download="Diego-Viana-CV.pdf"
-            className="flex flex-row items-center justify-center gap-3 rounded bg-[#ead2ff] p-4 text-[#c27bff] ring-1 ring-[#c27bff] transition-all sm:hover:bg-sky-400 dark:bg-inherit dark:text-[#c27bff] dark:ring-[#c27bff] sm:sm:dark:hover:bg-[#6f17b2]"
-          >
-            <span className="text-nowrap">Download my CV</span>
-            <Download className="size-5 max-sm:hidden" />
-          </a>
-        </div>
-
-      </div>
+      
     </div>
 
   );

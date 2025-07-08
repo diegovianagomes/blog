@@ -1,4 +1,4 @@
-import { Article, getAllTags, getArticles } from "@/src/lib/articles";
+import { Article, getAllTags, getArticles } from "@/lib/articles";
 import moment from "moment";
 import Link from "next/link";
 
