@@ -33,7 +33,7 @@ const externalLinks: Link[] = [
 
   {
     name: "Lattes",
-    url: "https://orcid.org/0000-0002-8701",
+    url: "https://lattes.cnpq.br/5782142876601584",
     icon: <LattesIcon className="h-4 w-4 fill-[#5b148f]  dark:fill-zinc-300"/>  },
 
   {
@@ -73,7 +73,7 @@ const ExternalLink = (link: Link) => {
 export default function Home() {
   return (
     <div className="flex flex-col gap-6 p-4">
-      <div className="flex items-center gap-6 rounded-lg  p-6">
+      <div className="flex items-center gap-6 rounded-lg  pb-4">
         <Image
           src="/images/avatar.png"
           alt="Diego Viana"
@@ -82,8 +82,12 @@ export default function Home() {
           className="shrink-0 rounded-full ring-2 ring-[#c27bff] dark:ring-[#ead2ff]"
         />
         <p className="text-sm text-[#5b148f] dark:text-[#ead2ff]">
-          Hi, I´m Diego Viana, a software engineer based in Brazil. I have a
-          passion for building web applications and exploring new technologies. This is
+          Hi, I´m Diego Viana, a Postgraduate Researcher at {" "}
+          <a className="text-[#5b148f] dark:text-[#ead2ff] dark:hover:text-#5b148f" href="https://sigaa.ufla.br/sigaa/public/programa/portal.jsf?lc=pt_BR&id=1836">
+            Federal University of Lavras
+          </a>
+          , based in Brazil. I have a
+          passion for building all kind of applications and exploring new technologies. This is
           my personal blog where I share my thoughts, experiences, and projects.
         </p>
       </div>
@@ -91,7 +95,6 @@ export default function Home() {
         {externalLinks.map((link: Link) => (<ExternalLink key={link.url} {...link} /> ))}
       </div>
 
-      
     </div>
 
   );

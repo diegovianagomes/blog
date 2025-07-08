@@ -80,21 +80,21 @@ export default function Header() {
             )}
           </button>*/}
           <Link
-            className="group relative rounded px-2 py-px  transition-all"
+            className="group relative rounded px-2 py-px  transition-all hover:underline"
             href="/projects"
             data-is-current-path={path === "/projects"}
           >
             projects
           </Link>
           <Link
-            className="group relative rounded px-2 py-px  transition-all"
+            className="group relative rounded px-2 py-px  transition-all hover:underline"
             href="/articles"
             data-is-current-path={path === "/articles"}
           >
             articles
           </Link>
           <Link
-            className="group relative rounded px-2 py-px  transition-all"
+            className="group relative rounded px-2 py-px  transition-all hover:underline"
             href="/about"
             data-is-current-path={path === "/about"}
           >
