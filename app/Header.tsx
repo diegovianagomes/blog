@@ -1,44 +1,15 @@
 "use client";
 
 import { ChevronLeft } from "lucide-react";
-//import { Moon, Sun } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-//import { useEffect, useState } from "react";
+
 
 
 export default function Header() {
-  {/* Implementation of the dark/light mode toggle in the next updates
-    const [isDarkMode, setIsDarkMode] = useState(false);*/}
+
   const path = usePathname();
   const isHome = path === "/";
-  {/* Implementation of the dark/light mode toggle in the next updates
-    useEffect(() => {
-    const themeIsDark =
-      localStorage.theme === "dark" ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches);
-
-    setIsDarkMode(themeIsDark);
-
-    if (themeIsDark) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, []);
-
-  const toggleTheme = () => {
-    const newIsDarkMode = !isDarkMode;
-    if (newIsDarkMode) {
-      localStorage.theme = "dark";
-      document.documentElement.classList.add("dark");
-    } else {
-      localStorage.theme = "light";
-      document.documentElement.classList.remove("dark");
-    }
-    setIsDarkMode(newIsDarkMode);
-  };*/}
 
   return (
     <header className="mx-auto max-w-prose py-8 max-sm:pt-4">
@@ -68,17 +39,6 @@ export default function Header() {
         )}
 
         <div className="flex items-center gap-4">
-          {/* Implementation of the dark/light mode toggle in the next updates
-          <button
-            onClick={toggleTheme}
-            className="group relative flex items-center"
-            >
-            {isDarkMode ? (
-              <Sun className="size-5 fill-[#4b0082] transition-all sm:hover:-rotate-12 sm:hover:scale-110" />
-            ) : (
-              <Moon className="size-5 fill-[#4b0082] transition-all sm:hover:-rotate-12 sm:hover:scale-110" />
-            )}
-          </button>*/}
           <Link
             className="group relative rounded px-2 py-px  transition-all hover:underline"
             href="/projects"

@@ -25,15 +25,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="min-h-screen">
+    <html lang="en" className="min-h-screen p-8">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-zinc-50 text-zinc-800 dark:bg-[#4b0082] dark:text-zinc-300`}
       >
-        {/*<Script id="theme-toggle" strategy="beforeInteractive">
-          {`document.documentElement.classList.toggle("dark", localStorage.theme ===
-        "dark" || (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches))`}
-        </Script>*/}
         <Header />
         <main className="mx-auto max-w-prose pb-4">
           {children}

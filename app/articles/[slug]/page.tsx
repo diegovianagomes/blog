@@ -47,7 +47,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           </div>
         </div>
       </div>
-      <Article html={articleData.contentHtml} />
+      <Article  html={articleData.contentHtml} />
     </>
   )
 }
