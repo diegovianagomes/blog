@@ -72,7 +72,7 @@ const ExternalLink = (link: Link) => {
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-6 p-4">
+    <div className="flex flex-col gap-6">
       <div className="flex items-center gap-6 rounded-lg  pb-4">
         <Image
           src="/images/avatar.png"

@@ -11,7 +11,7 @@ export default async function ArticlesPage() {
         Articles
       </h1>
 
-      <section className="flex flex-col divide-y divide-zinc-400 overflow-hidden rounded ring-1 ring-zinc-400 dark:divide-zinc-500 dark:ring-zinc-500 ">
+      <section className="flex flex-col divide-y divide-zinc-400 ring-2 overflow-hidden rounded  ring-[#c27bff] dark:ring-[#ead2ff]">
         {articles.map((article: Article) => (
           <Link
             className = "flex items-center justify-between px-4 py-2 transition-all sm:p-4 sm:hover:bg-zinc-100 sm:dark:hover:bg-[#8315db]"
