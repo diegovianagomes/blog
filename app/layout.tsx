@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono} from "next/font/google";
 import "./globals.css";
 import Header from "./Header";
-//import Script from "next/script";
-
+import 'katex/dist/katex.min.css';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

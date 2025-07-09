@@ -4,6 +4,8 @@ import fs from "fs";
 import moment from "moment";
 import { remark } from "remark";
 import html from "remark-html";
+import remarkGfm from 'remark-gfm'
+import remarkMath from 'remark-math';
 
 
 export type Article = {
@@ -88,9 +90,14 @@ export async function getArticlesData(id: string) {
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const matterResult = matter(fileContents);
   const processedContent = await remark()
+    .use(remarkMath)
+    .use(remarkGfm)
+    
     .use(html)
     .process(matterResult.content);
   const contentHtml = processedContent.toString();
+
+  
 
   return {
     id,

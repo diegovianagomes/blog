@@ -3,24 +3,28 @@ import { notFound } from 'next/navigation'
 import { Article } from "@/components/article";
 import { getArticlesData } from "@/lib/articles";
 
+
 function Tag({ tag }: { tag: string }) {
   return (
     <div
-      className="flex size-4 w-fit items-center justify-center rounded-full px-2 py-3 text-sm ring-1 ring-zinc-400 dark:ring-1 dark:ring-zinc-500"
+      className="flex items-center justify-center rounded-full px-3 py-1 text-sm ring-1 ring-zinc-400 dark:ring-zinc-500"
     >
       #{tag}
     </div>
   );
 }
-
+{/*}
 type Props = {
   params: {
     slug: string
-  }
-}
+  },
+  searchParams: { [key: string]: string | string[] | undefined }
+}*/}
 
-export default async function ArticlePage({ params }: Props) {
-  const articleData = await getArticlesData(params.slug)
+export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
+
+  const resolvedParams = await params;
+  const articleData = await getArticlesData(resolvedParams.slug)
 
   if (!articleData) {
     notFound()
