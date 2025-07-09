@@ -47,15 +47,13 @@ df
 
 The Apriori algorithm is then applied with a minimum support of 0.30 (30%):
 
-```latex
-\text{support}(X) = \frac{|\{t_i \in T \mid X \subseteq t_i\}|}{|T|}
-```
+$$\text{support}(X) = \frac{|\{t_i \in T \mid X \subseteq t_i\}|}{|T|}$$
 
-X: itemset
+$X$: itemset
 
-T:  total set of transactions
+$T$:  total set of transactions
 
-t_i:  individual transaction
+$t_i$:  individual transaction
 
 ```python
 apriori(df, min_support = 0.30, use_colnames=True)
@@ -151,15 +149,11 @@ Thus, rules with lift > 1 indicate a useful correlation for decision-making, suc
 
 Equation for measuring the strength of the association between using Confidence:
 
-```latex
-\text{lift}(X \Rightarrow Y) = \frac{\text{confidence}(X \Rightarrow Y)}{\text{support}(Y)}
-```
+$$\text{lift}(X \Rightarrow Y) = \frac{\text{confidence}(X \Rightarrow Y)}{\text{support}(Y)}$$
 
 but we don´t have confidence in this problem let's replace with its definition:
 
-```latex
-\text{lift}(X \Rightarrow Y) = \frac{\text{support}(X \cup Y)}{\text{support}(X) \cdot \text{support}(Y)}
-```
+$$\text{lift}(X \Rightarrow Y) = \frac{\text{support}(X \cup Y)}{\text{support}(X) \cdot \text{support}(Y)}$$
 
 Based on the frequent sets extracted, we generated association rules with the aim of identifying relevant relationships between items bought together. We used lift > 1 as a quality criterion, which indicates that the presence of the items in the antecedent increases the probability of the items occurring in the consequent, compared to chance.
 
