@@ -1,5 +1,5 @@
 ---
-title: Trasactional Data Patterns with the Apriori Algorithm"
+title: "Trasactional Data Patterns with the Apriori Algorithm"
 date: "2025-07-09"
 tags: ["Data mining", "apriori", "algorithms"]
 ---

@@ -1,5 +1,5 @@
 ---
-title: Basic Data Structures - Part 2"
+title: "Basic Data Structures - Part 2"
 date: "2024-09-28"
 tags: ["DS", "data structures", "algorithms"]
 ---

@@ -1,4 +1,4 @@
-import { Article, getAllTags, getArticles } from "@/lib/articles";
+import { Article, getArticles } from "@/lib/articles";
 import moment from "moment";
 import Link from "next/link";
 
@@ -10,7 +10,7 @@ export default async function ArticlesPage() {
       className="mb-16 mt-4 text-center max-sm:text-3xl text-5xl">
         Articles
       </h1>
-      <p>{JSON.stringify(getAllTags())}</p>
+
       <section className="flex flex-col divide-y divide-zinc-400 overflow-hidden rounded ring-1 ring-zinc-400 dark:divide-zinc-500 dark:ring-zinc-500 ">
         {articles.map((article: Article) => (
           <Link
@@ -20,11 +20,7 @@ export default async function ArticlesPage() {
           >
             <div className="flex gap-x-2 gap-y-1 max-sm:flex-col sm:items-center">
               {article.title}{" "}
-              <span className="flex gap-2 text-sm text-zinc-500 dark:text-zinc-400">
-                {article.tags.map((tag) => (
-                  <span key={tag}>#{tag}</span>
-                ))}
-              </span>
+
             </div>
             <span className="text-zinc-500 max-sm:text-sm dark:text-zinc-400">
               {moment(article.date,"YYYY-MM-DD").format("MMM/YYYY")}
